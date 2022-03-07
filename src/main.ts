@@ -1,5 +1,6 @@
 import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./app.module";
+import { FallbackFilter } from "./fallback.filter";
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
@@ -9,6 +10,7 @@ async function bootstrap() {
             req.headers["content-type"] || "application/json";
         next();
     });
+    app.useGlobalFilters(new FallbackFilter());
     await app.listen(3000);
 }
 bootstrap();
