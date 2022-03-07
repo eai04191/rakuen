@@ -4,9 +4,10 @@ import { AppService } from "./app.service";
 import { SequenceMiddleware } from "./middleware/sequence.middleware";
 import { ServerlistModule } from "./serverlist/serverlist.module";
 import { VersionModule } from "./version/version.module";
+import { LoginModule } from "./login/login.module";
 
 @Module({
-    imports: [ServerlistModule, VersionModule],
+    imports: [ServerlistModule, VersionModule, LoginModule],
     controllers: [AppController],
     providers: [AppService],
 })
