@@ -8,6 +8,7 @@ import { LoginModule } from "./login/login.module";
 import { PcMarriageListModule } from "./pc-marriage-list/pc-marriage-list.module";
 import { PclistModule } from './pclist/pclist.module';
 import { SquadlistModule } from './squadlist/squadlist.module';
+import { CurrencyinfoModule } from './currencyinfo/currencyinfo.module';
 
 @Module({
     imports: [
@@ -17,6 +18,7 @@ import { SquadlistModule } from './squadlist/squadlist.module';
         PcMarriageListModule,
         PclistModule,
         SquadlistModule,
+        CurrencyinfoModule,
     ],
     controllers: [AppController],
     providers: [AppService],
