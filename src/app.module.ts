@@ -7,6 +7,7 @@ import { VersionModule } from "./version/version.module";
 import { LoginModule } from "./login/login.module";
 import { PcMarriageListModule } from "./pc-marriage-list/pc-marriage-list.module";
 import { PclistModule } from './pclist/pclist.module';
+import { SquadlistModule } from './squadlist/squadlist.module';
 
 @Module({
     imports: [
@@ -15,6 +16,7 @@ import { PclistModule } from './pclist/pclist.module';
         LoginModule,
         PcMarriageListModule,
         PclistModule,
+        SquadlistModule,
     ],
     controllers: [AppController],
     providers: [AppService],
