@@ -12,6 +12,6 @@ import { VersionModule } from "./version/version.module";
 })
 export class AppModule implements NestModule {
     configure(consumer: MiddlewareConsumer) {
-        consumer.apply(SequenceMiddleware).forRoutes("/");
+        consumer.apply(SequenceMiddleware).forRoutes("*");
     }
 }
