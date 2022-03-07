@@ -12,7 +12,7 @@ export class LoginService {
         LoginCount: 1,
         LastLoginTime: 0,
         AccessToken: "LoGateAccessToken",
-        MasterPCID: 0,
+        MasterPCID: 1,
         IsChangeNickName: 1,
         ProfileText: "紹介文を入力してください ",
         MasterSquadIndex: 1,
