@@ -3,9 +3,10 @@ import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 import { SequenceMiddleware } from "./middleware/sequence.middleware";
 import { ServerlistModule } from "./serverlist/serverlist.module";
+import { VersionModule } from "./version/version.module";
 
 @Module({
-    imports: [ServerlistModule],
+    imports: [ServerlistModule, VersionModule],
     controllers: [AppController],
     providers: [AppService],
 })
