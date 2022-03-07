@@ -5,9 +5,15 @@ import { SequenceMiddleware } from "./middleware/sequence.middleware";
 import { ServerlistModule } from "./serverlist/serverlist.module";
 import { VersionModule } from "./version/version.module";
 import { LoginModule } from "./login/login.module";
+import { PcMarriageListModule } from "./pc-marriage-list/pc-marriage-list.module";
 
 @Module({
-    imports: [ServerlistModule, VersionModule, LoginModule],
+    imports: [
+        ServerlistModule,
+        VersionModule,
+        LoginModule,
+        PcMarriageListModule,
+    ],
     controllers: [AppController],
     providers: [AppService],
 })
