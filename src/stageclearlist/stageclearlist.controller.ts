@@ -8,7 +8,7 @@ export class StageclearlistController {
 
     @Post()
     @HttpCode(200)
-    getStageclearlist(@Req() request: Request) {
-        return this.stageclearlistService.getStageclearlist(request);
+    getStageclearlist(@Req() req: Request) {
+        return this.stageclearlistService.getStageclearlist(req);
     }
 }

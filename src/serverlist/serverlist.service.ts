@@ -27,10 +27,10 @@ export class ServerlistService {
         FrontAccessToken: "LoGateFrontAccessToken",
     };
 
-    getServerlist(reqest: Request): Serverlist {
+    getServerlist(req: Request): Serverlist {
         return {
             ...this.serverlist,
-            Sequence: reqest.body.Sequence + 1,
+            Sequence: req.body.Sequence + 2,
         };
     }
 }

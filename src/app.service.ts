@@ -3,9 +3,9 @@ import { Request } from "express";
 
 @Injectable()
 export class AppService {
-    getHello(request: Request): any {
+    getHello(req: Request): any {
         return {
-            Sequence: request.body.Sequence + 1,
+            Sequence: req.body.Sequence + 2,
             message: "Hello World!",
         };
     }

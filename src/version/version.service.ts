@@ -7,10 +7,10 @@ export class VersionService {
         ErrorCode: 0,
     };
 
-    getVersion(request: Request) {
+    getVersion(req: Request) {
         return {
             ...this.version,
-            Sequence: request.body.Sequence + 1,
+            Sequence: req.body.Sequence + 2,
         };
     }
 }

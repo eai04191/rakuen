@@ -8,7 +8,7 @@ export class CurrencyinfoController {
 
     @Post()
     @HttpCode(200)
-    getCurrencyinfo(@Req() request: Request) {
-        return this.currencyinfoService.getCurrencyinfo(request);
+    getCurrencyinfo(@Req() req: Request) {
+        return this.currencyinfoService.getCurrencyinfo(req);
     }
 }

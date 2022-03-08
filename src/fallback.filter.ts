@@ -15,7 +15,7 @@ export class FallbackFilter implements ExceptionFilter {
             .send({
                 ErrorCode: 0,
                 Result: null,
-                Sequence: Sequence + 1,
+                Sequence: Sequence + 2,
             });
     }
 }

@@ -8,7 +8,7 @@ export class PcMarriageListController {
 
     @Post()
     @HttpCode(200)
-    getPcMarriageList(@Req() reqest: Request) {
-        return this.pcMarriageListService.getPcMarriageList(reqest);
+    getPcMarriageList(@Req() req: Request) {
+        return this.pcMarriageListService.getPcMarriageList(req);
     }
 }

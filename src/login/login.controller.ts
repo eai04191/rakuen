@@ -8,7 +8,7 @@ export class LoginController {
 
     @Post()
     @HttpCode(200)
-    getLogin(@Req() request: Request) {
-        return this.loginService.getLogin(request);
+    getLogin(@Req() req: Request) {
+        return this.loginService.getLogin(req);
     }
 }

@@ -8,10 +8,10 @@ export class PcMarriageListService {
         PCMarriageInfos: null,
     };
 
-    getPcMarriageList(reqest: Request) {
+    getPcMarriageList(req: Request) {
         return {
             ...this.pcMarriageList,
-            Sequence: reqest.body.Sequence + 1,
+            Sequence: req.body.Sequence + 2,
         };
     }
 }

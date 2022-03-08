@@ -4,17 +4,17 @@ import { Request } from "express";
 @Injectable({})
 export class SquadlistService {
     private readonly squad = {
-        LeaderPCID: 1,
+        LeaderPCID: 100000000,
         SquadSlotList: [
-            { PCId: 1 },
-            { PCId: 1 },
-            { PCId: 1 },
-            { PCId: 1 },
-            { PCId: 1 },
-            { PCId: 1 },
-            { PCId: 1 },
-            { PCId: 1 },
-            { PCId: 1 },
+            { PCId: 100000010 },
+            { PCId: 100000011 },
+            { PCId: 100000012 },
+            { PCId: 100000013 },
+            { PCId: 100000014 },
+            { PCId: 100000015 },
+            { PCId: 100000016 },
+            { PCId: 100000017 },
+            { PCId: 100000018 },
         ],
     };
     private readonly squadlist = {
@@ -24,25 +24,13 @@ export class SquadlistService {
                 ...this.squad,
                 SquadIndex: 1,
             },
-            {
-                ...this.squad,
-                SquadIndex: 2,
-            },
-            {
-                ...this.squad,
-                SquadIndex: 3,
-            },
-            {
-                ...this.squad,
-                SquadIndex: 4,
-            },
         ],
     };
 
-    getSquadlist(reqest: Request) {
+    getSquadlist(req: Request) {
         return {
             ...this.squadlist,
-            Sequence: reqest.body.Sequence + 1,
+            Sequence: req.body.Sequence + 2,
         };
     }
 }

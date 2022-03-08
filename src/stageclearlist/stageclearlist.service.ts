@@ -6,13 +6,13 @@ export class StageclearlistService {
     private readonly stage = {};
     private readonly stageclearlist = {
         ErrorCode: 0,
-        Result: [],
+        Result: null,
     };
 
-    getStageclearlist(reqest: Request) {
+    getStageclearlist(req: Request) {
         return {
             ...this.stageclearlist,
-            Sequence: reqest.body.Sequence + 1,
+            Sequence: req.body.Sequence + 2,
         };
     }
 }

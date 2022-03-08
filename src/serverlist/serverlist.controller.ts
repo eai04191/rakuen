@@ -8,7 +8,7 @@ export class ServerlistController {
 
     @Post()
     @HttpCode(200)
-    getServerlist(@Req() request: Request) {
-        return this.serverlistService.getServerlist(request);
+    getServerlist(@Req() req: Request) {
+        return this.serverlistService.getServerlist(req);
     }
 }

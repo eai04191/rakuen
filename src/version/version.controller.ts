@@ -8,7 +8,7 @@ export class VersionController {
 
     @Post()
     @HttpCode(200)
-    getVersion(@Req() request: Request) {
-        return this.versionService.getVersion(request);
+    getVersion(@Req() req: Request) {
+        return this.versionService.getVersion(req);
     }
 }

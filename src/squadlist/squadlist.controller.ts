@@ -8,7 +8,7 @@ export class SquadlistController {
 
     @Post()
     @HttpCode(200)
-    getSquadlist(@Req() request: Request) {
-        return this.squadlistService.getSquadlist(request);
+    getSquadlist(@Req() req: Request) {
+        return this.squadlistService.getSquadlist(req);
     }
 }

@@ -8,7 +8,7 @@ export class PclistController {
 
     @Post()
     @HttpCode(200)
-    getPclist(@Req() reqest: Request) {
-        return this.pclistService.getPclist(reqest);
+    getPclist(@Req() req: Request) {
+        return this.pclistService.getPclist(req);
     }
 }

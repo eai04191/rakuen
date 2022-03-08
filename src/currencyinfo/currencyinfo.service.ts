@@ -19,10 +19,10 @@ export class CurrencyinfoService {
         ChallengeTicket: 1,
     };
 
-    getCurrencyinfo(reqest: Request) {
+    getCurrencyinfo(req: Request) {
         return {
             ...this.currencyinfo,
-            Sequence: reqest.body.Sequence + 1,
+            Sequence: req.body.Sequence + 2,
         };
     }
 }
