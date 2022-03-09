@@ -11,6 +11,7 @@ import { SquadlistModule } from "./squadlist/squadlist.module";
 import { CurrencyinfoModule } from "./currencyinfo/currencyinfo.module";
 import { StageclearlistModule } from "./stageclearlist/stageclearlist.module";
 import { InvenItemlistModule } from "./inven-itemlist/inven-itemlist.module";
+import { BattleserverEnterModule } from "./battleserver-enter/battleserver-enter.module";
 
 @Module({
     imports: [
@@ -23,6 +24,7 @@ import { InvenItemlistModule } from "./inven-itemlist/inven-itemlist.module";
         CurrencyinfoModule,
         StageclearlistModule,
         InvenItemlistModule,
+        BattleserverEnterModule,
     ],
     controllers: [AppController],
     providers: [AppService],
