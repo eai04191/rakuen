@@ -10,6 +10,7 @@ import { PclistModule } from "./pclist/pclist.module";
 import { SquadlistModule } from "./squadlist/squadlist.module";
 import { CurrencyinfoModule } from "./currencyinfo/currencyinfo.module";
 import { StageclearlistModule } from "./stageclearlist/stageclearlist.module";
+import { InvenItemlistModule } from "./inven-itemlist/inven-itemlist.module";
 
 @Module({
     imports: [
@@ -21,6 +22,7 @@ import { StageclearlistModule } from "./stageclearlist/stageclearlist.module";
         SquadlistModule,
         CurrencyinfoModule,
         StageclearlistModule,
+        InvenItemlistModule,
     ],
     controllers: [AppController],
     providers: [AppService],
