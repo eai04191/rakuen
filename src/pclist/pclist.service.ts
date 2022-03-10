@@ -7,10 +7,8 @@ export class PclistService {
     private createPc = ({
         PCId = Math.trunc(Math.random() * 100000),
         Index = "Char_PECS_DutchGirl_N",
-    }: {
-        PCId?: number;
-        Index?: string;
-    }): Pc => {
+        ...rest
+    }: Partial<Pc>): Pc => {
         return {
             PCId,
             Index,
@@ -29,18 +27,13 @@ export class PclistService {
             CreateTime: 1646683045,
             HaveSkillList: [
                 {
-                    SkillKeyString: "Skill_3P_ConstantiaS2_N_1",
-                    SkillLevel: 1,
+                    SkillKeyString: `Skill_${Index.replace("Char_", "")}_1`,
+                    SkillLevel: 10,
                     SkillExp: 0,
                 },
                 {
-                    SkillKeyString: "Skill_3P_ConstantiaS2_N_2",
-                    SkillLevel: 1,
-                    SkillExp: 0,
-                },
-                {
-                    SkillKeyString: "Skill_3P_ConstantiaS2_N_3",
-                    SkillLevel: 1,
+                    SkillKeyString: `Skill_${Index.replace("Char_", "")}_2`,
+                    SkillLevel: 10,
                     SkillExp: 0,
                 },
             ],
@@ -71,6 +64,7 @@ export class PclistService {
             HaveSkinList: null,
             Destroyed: 0,
             CoreLinkBonus_KeyString: "",
+            ...rest,
         };
     };
 
@@ -91,7 +85,7 @@ export class PclistService {
             this.createPc({ PCId: 100000016, Index: "Char_AGS_SpartanA_N" }),
             this.createPc({ PCId: 100000017, Index: "Char_AGS_SpartanB_N" }),
             this.createPc({ PCId: 100000018, Index: "Char_AGS_SpartanC_N" }),
-            this.createPc({ Index: "Char_3P_Labiata_N" }),
+            this.createPc({ PCId: 100000019, Index: "Char_3P_Labiata_N" }),
         ],
     };
 
