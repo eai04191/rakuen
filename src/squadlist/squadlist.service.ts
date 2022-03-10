@@ -8,13 +8,13 @@ export class SquadlistService {
         SquadSlotList: [
             { PCId: 100000010 },
             { PCId: 100000011 },
-            { PCId: 100000012 },
-            { PCId: 100000013 },
-            { PCId: 100000014 },
-            { PCId: 100000015 },
-            { PCId: 100000016 },
-            { PCId: 100000017 },
-            { PCId: 100000018 },
+            { PCId: 100000019 },
+            { PCId: /*100000013*/ 0 },
+            { PCId: /*100000014*/ 0 },
+            { PCId: /*100000015*/ 0 },
+            { PCId: /*100000016*/ 0 },
+            { PCId: /*100000017*/ 0 },
+            { PCId: /*100000018*/ 0 },
         ],
     };
     private readonly squadlist = {
