@@ -1,0 +1,10 @@
+{
+    "name": "patch",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "serve . -p 2070 --cors"
+    },
+    "dependencies": {
+        "serve": "^13.0.2"
+    }
+}

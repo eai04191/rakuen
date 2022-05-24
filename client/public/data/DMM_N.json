@@ -1,0 +1,12 @@
+{
+    "companyName": "PiG Corporation",
+    "productName": "LastOrigin",
+    "dataUrl": "DMM_N.data.unityweb",
+    "wasmCodeUrl": "DMM_N.wasm.code.unityweb",
+    "wasmFrameworkUrl": "DMM_N.wasm.framework.unityweb",
+    "TOTAL_MEMORY": 268435456,
+    "graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+    "webglContextAttributes": { "preserveDrawingBuffer": false },
+    "splashScreenStyle": "Dark",
+    "backgroundColor": "#231F20"
+}

@@ -11,6 +11,6 @@ async function bootstrap() {
         next();
     });
     app.useGlobalFilters(new FallbackFilter());
-    await app.listen(3000);
+    await app.listen(2052);
 }
 bootstrap();

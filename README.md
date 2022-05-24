@@ -4,7 +4,9 @@
 
 # Rakuen
 
-**Rakuen** is a fan-made backend server implementation of the game [Last Origin](https://www.last-origin.com/) (Japanese ver).
+**Rakuen** is a game "Last Origin" (Japanese, WebGL Version) that has been restored to a state that can be started.
+
+The server is implemented from scratch.
 
 ## Philosophy
 
@@ -20,7 +22,9 @@ This repository does not contain any game data, but if you have any problems pub
 
 ## Status
 
-![screenshot](https://user-images.githubusercontent.com/3516343/157289624-a52cd49f-2b5e-4ecf-ba9c-34d1fda3fc9a.png)
+![screenshot](https://user-images.githubusercontent.com/3516343/170075812-744d4901-2e12-4332-bbfc-850685abf9e5.png)
+
+![screenshot](https://user-images.githubusercontent.com/3516343/170075577-384c39e9-822a-4cc0-ad7f-3e29a66b83d4.png)
 
 Currently, there is nothing to authenticate users or persist data. Therefore, to use this, the user needs to start the server in each environment.
 
@@ -32,55 +36,48 @@ The main functions that currently work are as follows:
 -   [x] Read all story scenarios in the archive room
 -   [x] Read all event scenarios in the archive room
 
-## Running the server
+## Ports
 
-```bash
-# install dependencies
-$ yarn install
+Each package uses the following ports:
 
-# start development server
-$ yarn start
+-   `2052`: API Server
+-   `2070`: Patch Server
+-   `2114`: Client
 
-# start development server as watch mode
-$ yarn start:dev
+If these are used, they may not work properly. Change it if necessary.
 
-# start production server
-$ yarn start:prod
+## Running the Game
+
+**If you don't have the game assets, you can only see the title screen. The asset is not included in the repository, so you probably need to get it from another location.**
+
+If you have game assets, place them in `/patch`
+The file structure is as follows:
+
+```
+📁 patch
+├📁 LAOJP_DMM_WEB_N
+│└📁 2.0.6
+│　├📄 2dmodel_3p_alexandra_n
+│　├📄 2dmodel_3p_alexandra_n_dam
+│　├📄 2dmodel_3p_alexandra_ns1
+│　└ ...(1330 files in total)
+└📁 LAOJP_DMM_WEB_R
+　└📁 2.0.6
+　　├📄 2dmodel_3p_alexandra_n
+　　├📄 2dmodel_3p_alexandra_n_dam
+　　├📄 2dmodel_3p_alexandra_ns1
+　　└ ...(1330 files in total)
 ```
 
-## Connect from the client
-
-### WebGL (Browser)
-
-Transfer the request to `https://gate.last-origin.com/` to rakuen using software such as [HTTP Toolkit](https://httptoolkit.tech/) or [Charles Proxy](https://www.charlesproxy.com/). Details will be written here soon.
-
-You don't need to tweak your clients to connect to Rakuen.
-
-### Android
-
-> ![image](https://user-images.githubusercontent.com/3516343/157277153-7f760330-55ee-41d2-a9ab-dbed348ef003.png)
->
-> _A screenshot of Last Origin being started with network intercepted using the [HTTP Toolkit](https://httptoolkit.tech/). The modal says “App will be terminated because a security policy violation has been detected”._
-
-There is something that seems to be an anti-cheat in the Android version of the game, and you cannot continue the game if the network is intercepted. Therefore, it is not possible to connect to Rakuen without modifying the client. (And if you modify the client, your account will be banned)
-
-### iOS
-
-As far as I know, there is no way to forward in-app requests on iOS.
-
-## Test
-
-There are no tests now.
+Once you have your assets ready, you can start them.
 
 ```bash
-# unit tests
-$ yarn test
+# Install dependencies
+$ yarn install
 
-# e2e tests
-$ yarn test:e2e
-
-# test coverage
-$ yarn test:cov
+# Start api, patch server and client
+# The browser should open if it starts successfully
+$ yarn start
 ```
 
 ## Support

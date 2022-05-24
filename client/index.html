@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rakuen</title>
+        <link rel="stylesheet" href="./src/template//style.css" />
+        <style>
+            html,
+            body {
+                height: 100vh;
+                width: 100vw;
+                margin: 0;
+                padding: 0;
+            }
+            .webgl-content {
+                position: unset;
+                transform: unset;
+            }
+            #gameContainer {
+                margin: auto !important;
+            }
+            .footer {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="webgl-content">
+            <div id="gameContainer" style="width: 960px; height: 600px"></div>
+            <div class="footer"></div>
+        </div>
+
+        <script src="./src/template/UnityProgress.js"></script>
+        <script src="./src/UnityLoader.js"></script>
+        <script>
+            // TODO: Should be returned when the message is received
+            setTimeout(() => {
+                window.postMessage(
+                    `{"type":"init","strInit":"40855225,ピョンテ69号"}`,
+                    "*"
+                );
+            }, 3000);
+        </script>
+        <script type="text/javascript">
+            let initCallback;
+
+            function setEnableLog(enable) {}
+
+            function init(callback) {
+                initCallback = callback;
+                console.log("[iframe] init(callback)", initCallback);
+
+                let message = { type: "init", func: initCallback };
+
+                console.log("[iframe] message : ", message);
+                // window.postMessage(JSON.stringify(message), "*");
+                //parent.init(callback)
+            }
+
+            let purchaseCallBack;
+            let paramPurchase;
+
+            function startPurchase(purchase, purchaseCallFunc) {
+                purchaseCallBack = purchaseCallFunc;
+                paramPurchase = purchase;
+                console.log(
+                    "[iframe] startPurchase(purchase, purchaseCallFunc)",
+                    purchase,
+                    purchaseCallFunc
+                );
+
+                let message = { type: "startPurchase", funcParam: purchase };
+                console.log("[iframe] startPurchase message : ", message);
+                window.parent.postMessage(JSON.stringify(message), "*");
+            }
+
+            console.log("child load");
+            window.addEventListener("message", function (event) {
+                console.log("[iframe] event : ", event);
+                console.log("[iframe] event.data : ", event.data);
+                var json = JSON.parse(event.data);
+
+                if (event.data != "postmessage.test") {
+                    if (json.type == "userinfo") {
+                        console.log("userinfo response : ", json);
+                    } else if (json.type == "payment") {
+                        // {"type":"payment","result":1,"payment_id":"0"};
+                        console.log(
+                            "[iframe] payment response : ",
+                            json.result,
+                            json.payment_id
+                        );
+                        console.log(
+                            "purchaseCallBack(event.data) : purchaseCallBack ",
+                            purchaseCallBack,
+                            "event.data : ",
+                            event.data
+                        );
+                        purchaseCallBack(event.data);
+                    } else if (json.type == "msgadd") {
+                        console.log("msgadd response : ", json);
+                    } else if (json.type == "init") {
+                        console.log("init response : ", json);
+                        initCallback(json.strInit);
+                    } else if (json.type == "startPurchase") {
+                        console.log("startPurchase response : ", json);
+                        console.log(
+                            "startPurchase(paramPurchase) : purchaseCallBack ",
+                            purchaseCallBack,
+                            "paramPurchase : ",
+                            paramPurchase
+                        );
+                        purchaseCallBack(paramPurchase);
+                    }
+                }
+            });
+        </script>
+        <script>
+            var gameInstance = UnityLoader.instantiate(
+                "gameContainer",
+                "./data/DMM_R.json",
+                { onProgress: UnityProgress }
+            );
+        </script>
+        <script type="module" src="./src/loadMock.js"></script>
+    </body>
+</html>
