@@ -50,7 +50,7 @@ If these are used, they may not work properly. Change it if necessary.
 
 **If you don't have the game assets, you can only see the title screen. The asset is not included in the repository, so you probably need to get it from another location.**
 
-If you have game assets, place them in `/patch`
+If you have game assets, place them in `/client` and `/patch`
 The file structure is as follows:
 
 ```
@@ -67,6 +67,17 @@ The file structure is as follows:
 　　├📄 2dmodel_3p_alexandra_n_dam
 　　├📄 2dmodel_3p_alexandra_ns1
 　　└ ...(1330 files in total)
+📁 client
+└📁 public
+　└📁 data
+　　├📄 DMM_N.data.unityweb
+　　├📄 DMM_N.json
+　　├📄 DMM_N.wasm.code.unityweb
+　　├📄 DMM_N.wasm.framework.unityweb
+　　├📄 DMM_R.data.unityweb
+　　├📄 DMM_R.json
+　　├📄 DMM_R.wasm.code.unityweb
+　　└📄 DMM_R.wasm.framework.unityweb
 ```
 
 Once you have your assets ready, you can start them.
