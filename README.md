@@ -48,9 +48,10 @@ If these are used, they may not work properly. Change it if necessary.
 
 ## Running the Game
 
-**If you don't have the game assets, you can only see the title screen. The asset is not included in the repository, so you probably need to get it from another location.**
+**If you don't have the game assets, you can't start anything. The asset is not included in the repository, so you probably need to get it from another location.**
 
-If you have game assets, place them in `/client` and `/patch`
+If you have game assets, place them in `/client` and `/patch`.
+
 The file structure is as follows:
 
 ```
@@ -60,13 +61,19 @@ The file structure is as follows:
 │　├📄 2dmodel_3p_alexandra_n
 │　├📄 2dmodel_3p_alexandra_n_dam
 │　├📄 2dmodel_3p_alexandra_ns1
-│　└ ...(1330 files in total)
+│　├ ...(1327 files listed in `assetVersion.json`)
+│　├ assetVersion.json
+│　├ BundleInfo.txt
+│　└ WebGL.bundle
 └📁 LAOJP_DMM_WEB_R
 　└📁 2.0.6
 　　├📄 2dmodel_3p_alexandra_n
 　　├📄 2dmodel_3p_alexandra_n_dam
 　　├📄 2dmodel_3p_alexandra_ns1
-　　└ ...(1330 files in total)
+　　├ ...(1314 files listed in `assetVersion.json`)
+　　├ assetVersion.json
+　　├ BundleInfo.txt
+　　└ WebGL.bundle
 📁 client
 └📁 public
 　└📁 data
@@ -80,7 +87,13 @@ The file structure is as follows:
 　　└📄 DMM_R.wasm.framework.unityweb
 ```
 
-Once you have your assets ready, you can start them.
+Note that `BundleInfo.txt` and `WebGL.bundle` are not listed in `assetVersion.json`.
+
+You only need either DMM_N or DMM_R. The default is to launch DMM_R. If you need to switch, edit `client/index.html`.
+
+https://github.com/eai04191/rakuen/blob/c1791fcf14a745c11d91a33a338f6a14e7746e90/client/index.html#L121-L125
+
+Once you have your assets ready, you can start your rakuen.
 
 ```bash
 # Install dependencies
