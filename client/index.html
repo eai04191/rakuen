@@ -34,15 +34,6 @@
 
         <script src="./src/template/UnityProgress.js"></script>
         <script src="./src/UnityLoader.js"></script>
-        <script>
-            // TODO: Should be returned when the message is received
-            setTimeout(() => {
-                window.postMessage(
-                    `{"type":"init","strInit":"40855225,ピョンテ69号"}`,
-                    "*"
-                );
-            }, 3000);
-        </script>
         <script type="text/javascript">
             let initCallback;
 
@@ -57,6 +48,11 @@
                 console.log("[iframe] message : ", message);
                 // window.postMessage(JSON.stringify(message), "*");
                 //parent.init(callback)
+
+                window.postMessage(
+                    `{"type":"init","strInit":"40855225,ピョンテ69号"}`,
+                    "*"
+                );
             }
 
             let purchaseCallBack;
