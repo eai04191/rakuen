@@ -35,6 +35,7 @@ The main functions that currently work are as follows:
 -   [x] Login
 -   [x] Read all story scenarios in the archive room
 -   [x] Read all event scenarios in the archive room
+-   [x] View all character information in scrapbook
 
 ## Ports
 
